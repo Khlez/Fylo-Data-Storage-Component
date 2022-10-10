@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-image: url(bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: 0px 315px;
+  background-color: var(--very-dark-blue);
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+ overflow: hidden;
+}
+
+.component-1 {
+  background-color: var(--dark-blue);
+  width: 21em;
+  padding-left: 3em;
+  padding-right: 1em;
+  padding-block: 2.5em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 105px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-left: 17em;
+}
+
+.heading {
+  padding-bottom: 2em;
+}
+
+.icons {
+  display: flex;
+  gap: 1.3em;
+}
+
+#highlight {
+  background-color: var(--very-dark-blue);
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.component-2 {
+  background-color: var(--dark-blue);
+  padding: 2.5em;
+  width: 30em;
+  border-radius: 10px;
+  transform: translateY(19%);
+}
+
+.component-2 .first {
+  color: var(--pale-blue);
+  font-weight: 700;
+  padding-bottom: 1em;
+}
+
+.first span {
+  color: white;
+}
+
+.meter {
+  border-radius: 10px;
+  width: 29.5em;
+  height: 16px;
+  background-color: var(--very-dark-blue);
+  color: blue;
+}
+
+.meter::before {
+  content: "";
+  display: block;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  width: 21.5em;
+  height: 13px;
+  position: absolute;
+  top: 4.7em;
+  left: 2.65em;
+  border-radius: 10px;
+}
+.meter::after {
+  content: "";
+  display: block;
+  background: white;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  left: 23.3em;
+  top: 4.8em;
+}
+
+.component-2 .figures {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5em;
+}
+
+.figures p {
+  color: white;
+  font-weight: 700;
+}
+
+.tab h1 {
+  color: var(--very-dark-blue);
+  font-weight: 700;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.tab span {
+  color: var(--grayish-blue);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.tab {
+  text-align: center;
+  background-color: white;
+  padding-inline: 1.2em;
+  padding-block: 0.7em;
+
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  /*padding-block: 3em;
+padding-inline: 1.5em; */
+  transform: translate(-138%, -70%);
+  /*clip-path: polygon(0 26%, 100% 26%, 100% 75%, 100% 89%, 88% 73%, 0 73%); */
+  /*clip-path: polygon(0 26%, 100% 26%, 100% 75%, 100% 87%, 88% 73%, 0 73%);*/
+}
+
+.tab::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 96px;
+  clip-path: polygon(100% 58%, 77% 58%, 100% 84%);
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 3.3em;
+  overflow: hidden;
+}
+
+
+
+
+@media (max-width: 900px) {
+  body {
+    background-image: url(bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+  }
+
+  main {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0em;
+  }
+
+  .component-1 {
+    margin: 0;
+  }
+
+  .component-2 {
+    width: 20em;
+  }
+  .component-2 .figures {
+    padding-bottom: 1em;
+  }
+  .meter {
+    width: 20.5em;
+    height: 18px;
+  }
+
+  .meter::before {
+    width: 15.5em;
+    height: 14px;
+    top: 4.8em;
+  }
+
+  .meter::after {
+    width: 10px;
+    height: 10px;
+    z-index: 100;
+    left: 17.3em;
+    top: 4.95em;
+  }
+
+  .tab::after {
+    display: none;
+  }
+  .tab {
+    border-bottom-right-radius: 10px;
+    transform: translate(20%, -10%);
+  }
+}
